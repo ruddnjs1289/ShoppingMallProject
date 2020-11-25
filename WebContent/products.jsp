@@ -1,6 +1,9 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="com.java.dto.Product" %>
+<%@ page import="com.java.dto.*" %>
+<%@ page import="com.java.dao.*" %>
+
+
 <jsp:useBean id="productDAo" class="com.java.dao.ProductRepositiory" scope="session"/>
 
 <html>
@@ -16,7 +19,8 @@
      </div>
  </div>
  <%
-  ArrayList<Product> listofProducts= productDAo.getAllProducts();
+  ProductRepositiory dao =ProductRepositiory.getInstance();
+  ArrayList<Product> listofProducts= dao.getAllProducts();
  %>
  
  

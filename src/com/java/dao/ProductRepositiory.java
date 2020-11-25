@@ -8,6 +8,11 @@ import com.java.dto.Product;
 public class ProductRepositiory {
 	
 	private ArrayList<Product> listofProducts = new ArrayList<Product>();
+	private static  ProductRepositiory instance =new ProductRepositiory();
+	
+	public static ProductRepositiory getInstance() {
+		return instance;
+	}
 	
 	public ProductRepositiory() {
 		
@@ -58,5 +63,7 @@ public class ProductRepositiory {
 		return productById;
 		
 	}
-
+public void addProduct(Product product) {
+	listofProducts.add(product);
+}
 }
