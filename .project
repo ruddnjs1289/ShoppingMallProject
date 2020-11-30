@@ -28,4 +28,26 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>WebContent/resources/css/bootstrap.min.css</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Desktop/bootstrap-4.3.1-dist/css/bootstrap.min.css</locationURI>
+		</link>
+		<link>
+			<name>WebContent/resources/images/p1234.jpg</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Desktop/p1234.jpg</locationURI>
+		</link>
+		<link>
+			<name>WebContent/resources/images/p1235.jpg</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Desktop/p1235.jpg</locationURI>
+		</link>
+		<link>
+			<name>WebContent/resources/images/p1236.jpg</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Desktop/p1236.jpg</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>

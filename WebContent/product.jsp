@@ -1,10 +1,10 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ page import="com.java.dto.Product" %>
-<%@ page import=com.java.dao.* %>
+<%@ page import="com.java.dao.*" %>
 <jsp:useBean id="productDAo" class="com.java.dao.ProductRepositiory" scope="session"/>
 <html>
 <head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet"  href="./resources/css/bootstrap.min.css">
 <title>상품 상제 정보</title>
 </head>
 <body>
@@ -23,6 +23,9 @@
  
  <div class="container">
      <div class="row">
+     <div class="co-md-5">
+     <img src="./resources/images/<%=product.getFilename() %>" style="width:100">
+     </div>
      <div class="col-md-6">
         <h3><%=product.getPname() %></h3>
         <p><%=product.getDescriotion()%>

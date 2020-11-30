@@ -2,17 +2,28 @@
     pageEncoding="UTF-8"%>
 <%@ page import="com.java.dto.Product" %>
 <%@ page import="com.java.dao.ProductRepositiory" %>
+<%@ page import="java.util.*" %>
+<%@ page import="com.oreilly.servlet.*" %>
+<%@ page import="com.oreilly.servlet.multipart.*" %>
+
 <%
     request.setCharacterEncoding("UTF-8");
 
-    String productId = request.getParameter("productId");
-    String name = request.getParameter("name");
-    String unitPrice = request.getParameter("unitPrice");
-    String description = request.getParameter("description");
-    String manufacturer = request.getParameter("manufacturer");
-    String category = request.getParameter("category");
-    String unitsInStock = request.getParameter("unitsInStock");
-    String condition = request.getParameter("condition");
+    String filename="";
+    String realFolder = "C:\\upload";
+    String encType ="utf-8";
+    int maxSize = 5*1024*1024;
+    
+    MultipartRequest multi =new MultipartRequest(request , realFolder , maxSize , encType , new DefaultFileRenamePolicy());
+
+    String productId = multi.getParameter("productId");
+    String name = multi.getParameter("name");
+    String unitPrice = multi.getParameter("unitPrice");
+    String description = multi.getParameter("description");
+    String manufacturer = multi.getParameter("manufacturer");
+    String category = multi.getParameter("category");
+    String unitsInStock = multi.getParameter("unitsInStock");
+    String condition = multi.getParameter("condition");
 
     Integer price;
 
@@ -27,6 +38,11 @@
         stock = 0;
     else
         stock = Long.valueOf(unitsInStock);
+    
+    Enumeration files =multi.getFileNames();
+    String fname =(String)files.nextElement();
+    String fileName = multi.getFilesystemName(fname);
+    
 
      ProductRepositiory dao = ProductRepositiory.getInstance();
 
@@ -39,6 +55,7 @@
     newProduct.setCategory(category);
     newProduct.setUntitsInStock(stock);
     newProduct.setCondition(condition);
+    newProduct.setFilename(filename);
 
     dao.addProduct(newProduct);
 

@@ -8,7 +8,7 @@
 
 <html>
 <head>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="./resources/css/bootstrap.min.css">
 <title>Home</title>
 </head>
 <body>
@@ -32,6 +32,7 @@
 	  Product product = listofProducts.get(i);
 	  %>
 	  <div class="col-md-4">
+	  <img src="./resources/images/<%=product.getFilename() %>" style="width:100">
 	  <h3><%=product.getPname() %></h3>
 	  <p><%=product.getDescriotion()%>
 	  <p><%=product.getUnitPrice() %>원
